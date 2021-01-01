@@ -8,9 +8,10 @@ for number in puzzle_input:
             # One entry is being used twice
             if (len([number, number2, str(2020-int(number)-int(number2))]) !=
                len(set([number, number2, str(2020-int(number)-int(number2))]))
-               and puzzle_input.count(number) + puzzle_input.count(number2) == 2):
+               and puzzle_input.count(number) + puzzle_input.count(number2) ==
+               2):
                 continue
-# Else print out the product of the three numbers as the answer
+            # Else print out the product of the three numbers as the answer
             else:
                 print(int(number)*int(number2)*(2020-int(number)-int(number2)))
                 break
