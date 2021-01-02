@@ -2,8 +2,7 @@
 with open('input.txt', 'r') as file:
     puzzle_input = [i for i in file.read().split('\n')]
 bags = {}
-# Loop through multiple times to get all the bags
-for check in puzzle_input:
+while True:
     for rule in puzzle_input:
         # No need to keep on going if we already have "shiny gold" bag amount
         if 'shiny gold' in bags:

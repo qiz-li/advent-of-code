@@ -6,13 +6,14 @@ tried = set()
 acc = idx = 0
 trying = ""
 while True:
-    # Check if all the operations excuted properly
+    # Check if all the operations excuted properly.
+    # If so, we have found the solution.
     if idx == len(puzzle_input):
         break
     operation, argument = puzzle_input[idx].split()
     # Check first if this operation is already in the "complete" set.
     # If so, the program fails because it is an infinite loop,
-    # so we rest everything and try again
+    # so we rest everything and try again.
     if operation + str(idx) in complete:
         complete = set()
         acc = idx = 0
@@ -27,7 +28,7 @@ while True:
         elif argument[0] == '-':
             acc -= int(argument[1:])
     # If a nop operation has never been tried before,
-    # it changes to a jmp operation and is added to the "tried" set
+    # it changes to a jmp operation and is added to the "tried" set.
     elif (operation == 'nop' and len(trying) == 0
           and operation + str(idx) not in tried):
         trying = operation + str(idx)
@@ -35,7 +36,7 @@ while True:
     elif operation == 'jmp':
         # If a jmp operation has never been tried before,
         # it changes to a nop operation by doing nothing
-        # and is added to the "tried" set
+        # and is added to the "tried" set.
         if len(trying) == 0 and operation + str(idx) not in tried:
             trying = operation + str(idx)
         elif argument[0] == '+':
