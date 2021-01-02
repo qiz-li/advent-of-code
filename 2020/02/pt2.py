@@ -6,7 +6,7 @@ for line in puzzle_input:
     # Extract the indexes, letter, and password
     indexes, letter, password = line.split()
     index_low, index_hi = indexes.split('-')
-    # Check if occurance of letter is within limits
+    # Check if occurance of letter is on either index
     if (password[int(index_low)-1] == letter[0] and password[int(index_hi)-1]
        != letter[0] or password[int(index_low)-1] != letter[0] and password
        [int(index_hi)-1] == letter[0]):

@@ -7,10 +7,11 @@ tree_total = 1
 for slope in slopes:
     right, down = slope
     idx = tree = 0
-    # Row goes by the specified amount and index increase by specified amount
+    # Line goes down by the specified amount,
+    # and each time index increase by specified amount.
     for line in puzzle_input[down::down]:
         idx += right
-        # If index extends out of the list, start counting from beginning
+        # If index extends out of the list, start counting from beginning.
         if idx > len(line) - 1:
             idx -= len(line)
         if line[idx] == "#":
