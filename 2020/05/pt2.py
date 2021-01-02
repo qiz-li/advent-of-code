@@ -15,10 +15,8 @@ for line in puzzle_input:
         elif character == 'R':
             col = col[len(col)//2:]
     seat_id = row[0] * 8 + col[0]
-    seat_ids.append(seat_id)
-seat_ids.sort()
 # Find the missing ID in the list of IDs
-for idx, seat in enumerate(seat_ids):
-    if seat + 1 != seat_ids[idx + 1]:
+for idx, seat in enumerate(sorted(seat_ids)):
+    if seat + 2 == sorted(seat_ids)[idx + 1]:
         print(seat + 1)
         break
