@@ -2,6 +2,7 @@
 with open('input.txt', 'r') as file:
     puzzle_input = [i.strip('\n') for i in file.readlines()]
 occupied = 0
+puzzle_input_old = []
 
 
 def check_seat(y, x, lst):
@@ -80,11 +81,9 @@ def run_model(lst):
 
 
 # Model list until it no longer changes
-while True:
+while puzzle_input_old != puzzle_input:
     puzzle_input_old = puzzle_input
     puzzle_input = run_model(puzzle_input)
-    if puzzle_input_old == puzzle_input:
-        break
 # Find occupied seats!
 for line in puzzle_input:
     for seat in line:

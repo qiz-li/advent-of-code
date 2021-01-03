@@ -7,7 +7,7 @@ tree_total = 1
 for slope in slopes:
     right, down = slope
     idx = tree = 0
-    # Line goes down by the specified amount,
+    # Row goes down by the specified amount,
     # and each time index increase by specified amount.
     for line in puzzle_input[down::down]:
         idx += right

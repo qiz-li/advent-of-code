@@ -2,7 +2,8 @@
 with open('input.txt', 'r') as file:
     puzzle_input = [i for i in file.read().split('\n')]
 bags = {}
-while True:
+# Go until we have "shiny gold" bag amount
+while 'shiny gold' not in bags:
     for rule in puzzle_input:
         # No need to keep on going if we already have "shiny gold" bag amount
         if 'shiny gold' in bags:
@@ -28,11 +29,8 @@ while True:
                 bag_amount = int(''.join([i for i in bag if i.isdigit()]))
                 total_contained += bag_amount * bags.get(bag_no_num.strip())
         # If all sub-bags of the main-bag are in the known list,
-        # meaning we know the total amount of bags inside that sub-bag,
+        # meaning we know the total amount of bags inside the main-bag,
         # add the sub-bag and the total amount of bags inside it to the list
         if valid_bags + 1 == len(bag_lst):
             bags[bag_lst[0]] = total_contained + 1
-    else:
-        continue
-    break
 print(bags.get('shiny gold') - 1)

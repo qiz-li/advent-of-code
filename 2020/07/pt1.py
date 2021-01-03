@@ -2,7 +2,9 @@
 with open('input.txt', 'r') as file:
     puzzle_input = [i for i in file.read().split('\n')]
 bags = {'shiny gold'}
-while True:
+bags_last = 0
+# If the list doesn't change, all bags have been found.
+while bags_last != len(bags):
     bags_last = len(bags)
     for rule in puzzle_input:
         # Splits each rule into a list of bags
@@ -18,7 +20,4 @@ while True:
             if bag.strip() in bags:
                 bags.add(bag_lst[0])
                 break
-    # If the list doesn't change, all bags have been found.
-    if bags_last == len(bags):
-        break
 print(len(bags) - 1)
