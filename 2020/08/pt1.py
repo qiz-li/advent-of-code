@@ -5,21 +5,17 @@ complete = set()
 acc = idx = 0
 for line in puzzle_input:
     operation, argument = puzzle_input[idx].split()
+    argument = int(argument)
+    operation_id = operation + str(idx)
     # Check first if this operation is already in the "complete" set.
     # If so, we have found the infinite loop.
-    if operation + str(idx) in complete:
+    if operation_id in complete:
+        print(acc)
         break
     # If not, execute the operation and add it to the "complete" set
     elif operation == 'acc':
-        if argument[0] == '+':
-            acc += int(argument[1:])
-        elif argument[0] == '-':
-            acc -= int(argument[1:])
+        acc += argument
     elif operation == 'jmp':
-        if argument[0] == '+':
-            idx += int(argument[1:]) - 1
-        elif argument[0] == '-':
-            idx -= (int(argument[1:]) + 1)
-    complete.add(operation + str(idx))
+        idx += argument - 1
+    complete.add(operation_id)
     idx += 1
-print(acc)
