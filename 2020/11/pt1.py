@@ -39,10 +39,12 @@ def check_adjacent(y, x, lst):
         The number of occupied seats around the given seat.
     """
     occupied = 0
+    # Starts at the top left corner of the
+    # adjacent seats and go through all eight
     col = y - 1
     row = x - 1
     for i in range(9):
-        if check_seat(col, row, lst) == "#" and (col, row) != (y, x):
+        if check_seat(col, row, lst) == '#' and (col, row) != (y, x):
             occupied += 1
         if row - x == 1:
             col += 1
@@ -64,18 +66,20 @@ def run_model(lst):
         New list after running the model.
     """
     new_lst = []
+    # Go through every seat in every line of the input list
+    # and make changes to each seat depending on the condition
     for idx, line in enumerate(lst):
-        new_line = ""
+        new_line = ''
         for seat_idx, seat in enumerate(line):
-            if seat != ".":
+            if seat != '.':
                 if check_adjacent(idx, seat_idx, lst) == 0:
-                    new_line += ("#")
+                    new_line += ('#')
                 elif check_adjacent(idx, seat_idx, lst) >= 4:
-                    new_line += ("L")
+                    new_line += ('L')
                 else:
                     new_line += lst[idx][seat_idx]
             else:
-                new_line += "."
+                new_line += '.'
         new_lst.append(new_line)
     return new_lst
 
@@ -87,6 +91,6 @@ while puzzle_input_old != puzzle_input:
 # Find occupied seats!
 for line in puzzle_input:
     for seat in line:
-        if seat == "#":
+        if seat == '#':
             occupied += 1
 print(occupied)
