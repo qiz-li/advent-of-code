@@ -12,7 +12,7 @@ for slope in slopes:
     for line in puzzle_input[down::down]:
         idx += right
         # If index extends out of the list, start counting from beginning.
-        if idx > len(line) - 1:
+        if idx >= len(line):
             idx -= len(line)
         if line[idx] == "#":
             tree += 1
