@@ -2,7 +2,7 @@
 # https://adventofcode.com/2020/day/9
 
 with open('input.txt', 'r') as file:
-    puzzle_input = [int(i) for i in file.read().split('\n')]
+    puzzle_input = [int(i) for i in file.read().splitlines()]
 idx = 25
 while True:
     # Loop through all 25 numbers before the number.

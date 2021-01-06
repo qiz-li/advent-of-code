@@ -2,7 +2,7 @@
 # https://adventofcode.com/2020/day/2
 
 with open('input.txt', 'r') as file:
-    puzzle_input = [i.strip('\n') for i in file.readlines()]
+    puzzle_input = file.read().splitlines()
 valid = 0
 for line in puzzle_input:
     # Extract the indexes, letter, and password

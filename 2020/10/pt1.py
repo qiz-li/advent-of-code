@@ -2,7 +2,7 @@
 # https://adventofcode.com/2020/day/10
 
 with open('input.txt', 'r') as file:
-    puzzle_input = [int(i) for i in file.read().split('\n')]
+    puzzle_input = [int(i) for i in file.read().splitlines()]
 # Add the charging outlet (0) and the built-in joltage adapter (max + 3)
 puzzle_input += [0] + [max(puzzle_input) + 3]
 puzzle_input.sort()

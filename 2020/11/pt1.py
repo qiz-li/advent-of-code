@@ -2,7 +2,7 @@
 # https://adventofcode.com/2020/day/11
 
 with open('input.txt', 'r') as file:
-    puzzle_input = [i.strip('\n') for i in file.readlines()]
+    puzzle_input = file.read().splitlines()
 occupied = 0
 puzzle_input_old = []
 

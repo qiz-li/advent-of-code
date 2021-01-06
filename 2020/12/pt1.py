@@ -2,7 +2,7 @@
 # https://adventofcode.com/2020/day/12
 
 with open('input.txt', 'r') as file:
-    puzzle_input = [i for i in file.read().split('\n')]
+    puzzle_input = file.read().splitlines()
 directions = ['N', 'E', 'S', 'W']
 currently = 'E'
 idx = 1

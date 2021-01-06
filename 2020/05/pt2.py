@@ -2,7 +2,7 @@
 # https://adventofcode.com/2020/day/5
 
 with open('input.txt', 'r') as file:
-    puzzle_input = [i for i in file.read().split('\n')]
+    puzzle_input = file.read().splitlines()
 seat_ids = []
 for line in puzzle_input:
     col, row = list(range(8)), list(range(128))

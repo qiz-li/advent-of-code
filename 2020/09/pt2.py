@@ -2,7 +2,7 @@
 # https://adventofcode.com/2020/day/9
 
 with open('input.txt', 'r') as file:
-    puzzle_input = [int(i) for i in file.read().split('\n')]
+    puzzle_input = [int(i) for i in file.read().splitlines()]
 for idx in range(len(puzzle_input)):
     numbers_sum = 0
     numbers_lst = []

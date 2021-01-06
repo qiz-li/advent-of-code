@@ -2,7 +2,7 @@
 # https://adventofcode.com/2020/day/7
 
 with open('input.txt', 'r') as file:
-    puzzle_input = [i for i in file.read().split('\n')]
+    puzzle_input = file.read().splitlines()
 bags = {'shiny gold'}
 bags_last = 0
 # If the list doesn't change, all bags have been found.

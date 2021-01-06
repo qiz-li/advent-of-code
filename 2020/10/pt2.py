@@ -3,7 +3,7 @@
 # This one took a while, phew!!
 
 with open('input.txt', 'r') as file:
-    puzzle_input = [int(i) for i in file.read().split('\n')]
+    puzzle_input = [int(i) for i in file.read().splitlines()]
 # Add the charging outlet (0) to the list, no need to add the built-in adopter
 # because + 3 cannot have different arrangements anyway
 # (e.g. 6, 7, 10, we have to use 7 to get to 10;

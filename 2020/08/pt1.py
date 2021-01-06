@@ -2,7 +2,7 @@
 # https://adventofcode.com/2020/day/8
 
 with open('input.txt', 'r') as file:
-    puzzle_input = [i for i in file.read().split('\n')]
+    puzzle_input = file.read().splitlines()
 complete = set()
 acc = idx = 0
 for line in puzzle_input:

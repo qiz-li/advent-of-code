@@ -2,7 +2,7 @@
 # https://adventofcode.com/2020/day/3
 
 with open('input.txt', 'r') as file:
-    puzzle_input = [i.strip('\n') for i in file.readlines()]
+    puzzle_input = file.read().splitlines()
 # List of slopes to test [right, down]
 slopes = [[1, 1], [3, 1], [5, 1], [7, 1], [1, 2]]
 tree_total = 1

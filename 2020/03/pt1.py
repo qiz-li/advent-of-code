@@ -2,7 +2,7 @@
 # https://adventofcode.com/2020/day/3
 
 with open('input.txt', 'r') as file:
-    puzzle_input = [i.strip('\n') for i in file.readlines()]
+    puzzle_input = file.read().splitlines()
 idx = tree = 0
 # With each line (down 1) the index +3 (right 3)
 for line in puzzle_input[1:]:
