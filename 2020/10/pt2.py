@@ -1,5 +1,7 @@
+# Find this puzzle at:
+# https://adventofcode.com/2020/day/10
 # This one took a while, phew!!
-# Put puzzle input into a list
+
 with open('input.txt', 'r') as file:
     puzzle_input = [int(i) for i in file.read().split('\n')]
 # Add the charging outlet (0) to the list, no need to add the built-in adopter
