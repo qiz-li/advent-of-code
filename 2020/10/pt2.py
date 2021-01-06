@@ -3,19 +3,13 @@
 # This one took a while, phew!!
 
 with open('input.txt', 'r') as file:
-    puzzle_input = [int(i) for i in file.read().splitlines()]
-# Add the charging outlet (0) to the list, no need to add the built-in adopter
-# because + 3 cannot have different arrangements anyway
-# (e.g. 6, 7, 10, we have to use 7 to get to 10;
-# there are no other possible arrangements).
-puzzle_input.append(0)
-puzzle_input.sort()
+    puzzle_input = [0] + [int(i) for i in file.read().splitlines()]
 arrangements = 1
 prev_arrangements = []
 # Because of how the arrangments relay on top of each other,
 # the possible arrangements of a number is actually the sum
 # of possibles arrangments of previous numbers.
-for idx, adapter in enumerate(puzzle_input):
+for adapter in sorted(puzzle_input):
     # If the previous numbers of the nth number are n-1, n-2, n-3,
     # respectively. The possible arrangements of n is the sum of
     # the possible arrangements of n-1, n-2, n-3, the previous three
