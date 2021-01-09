@@ -17,10 +17,10 @@ def apply_mask(xy):
     Returns:
     The bit after being masked.
     """
-    if value[0] == 'X':
-        return value[1]
+    if xy[0] == 'X':
+        return xy[1]
     else:
-        return value[0]
+        return xy[0]
 
 
 for line in puzzle_input:
@@ -32,6 +32,6 @@ for line in puzzle_input:
     else:
         address = int(''.join(i for i in command if i.isdigit()))
         value = bin(int(value))[2:].zfill(36)
-        write_value = ''.join(map(apply_mask, zip(mask, value)))
-        memory[address] = int(write_value, 2)
+        masked_value = ''.join(map(apply_mask, zip(mask, value)))
+        memory[address] = int(masked_value, 2)
 print(sum(memory.values()))
