@@ -48,12 +48,12 @@ def all_addresses(address):
     addresses = []
     pos_permutations = set()
     x_locations = [idx for idx, x in enumerate(address) if x == 'X']
-    pos_ones = [''.zfill(len(x_locations))]
-    for idx in range(len(pos_ones[0])):
-        old = list(pos_ones[idx])
-        old[idx] = '1'
-        pos_ones.append(''.join(old))
-    for i in pos_ones:
+    pos_combinations = [''.zfill(len(x_locations))]
+    for idx in range(len(pos_combinations[0])):
+        combination = list(pos_combinations[idx])
+        combination[idx] = '1'
+        pos_combinations.append(''.join(combination))
+    for i in pos_combinations:
         pos_permutations |= {x for x in itertools.permutations(i, len(i))}
     for pos_permutation in pos_permutations:
         for bit in list(zip(pos_permutation, x_locations)):
