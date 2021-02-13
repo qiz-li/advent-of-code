@@ -3,20 +3,22 @@ Find this puzzle at:
 https://adventofcode.com/2019/day/1
 */
 
-const fs = require("fs");
-const problemInput = fs.readFileSync("./input.txt").toString().split("\n");
+const fs = require('fs');
 
-var total_fuel = 0;
+const problemInput = fs.readFileSync('./input.txt').toString().split('\n');
+let totalFuel = 0;
 
-for (var i = 0; i < problemInput.length; i++) {
+problemInput.forEach((line) => {
   let fuel = 0;
-  let additional = Math.floor(problemInput[i] / 3) - 2;
   // Adding all additional fuels until reaching 0 or negative
-  while (additional > 0) {
+  for (
+    let additional = Math.floor(line / 3) - 2;
+    additional > 0;
+    additional = Math.floor(additional / 3) - 2
+  ) {
     fuel += additional;
-    additional = Math.floor(additional / 3) - 2;
   }
-  total_fuel += fuel;
-}
+  totalFuel += fuel;
+});
 
-console.log(total_fuel);
+console.log(totalFuel);

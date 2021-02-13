@@ -5,12 +5,12 @@ https://adventofcode.com/2019/day/1
 */
 
 const fs = require('fs');
+
 const problemInput = fs.readFileSync('./input.txt').toString().split('\n');
+let sum = 0;
 
-var sum = 0;
-
-for (var i = 0; i < problemInput.length; i++) {
-  sum += Math.floor(problemInput[i] / 3) - 2;
-}
+problemInput.forEach((line) => {
+  sum += Math.floor(line / 3) - 2;
+});
 
 console.log(sum);
