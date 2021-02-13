@@ -4,8 +4,8 @@ Find this puzzle at:
 https://adventofcode.com/2019/day/1
 */
 
-const fs = require("fs");
-const problemInput = fs.readFileSync("./input.txt").toString().split("\n");
+const fs = require('fs');
+const problemInput = fs.readFileSync('./input.txt').toString().split('\n');
 
 var sum = 0;
 
